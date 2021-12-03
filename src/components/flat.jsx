@@ -2,30 +2,20 @@ import React, { Component } from "react";
 
 
 class Flat extends Component {
-
-  renderFlat = () => {
-    // const url = this.props.flat.url
-    // const price = this.props.flat.price
-    // const name = this.props.flat.name
-
-    return (
-      <div className="card" style={{ backgroundColor: "black" }}>
-        <div className="card-category">le prix</div>
-        <div className="card-description">
-          <h2>le nom</h2>
-        </div>
-      </div>
-    );
+  handleClick = () => {
+    this.props.selectFlat(this.props.index);
   }
 
   render() {
     return (
-      <div>
-        {this.renderFlat()}
+      <div className="card" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('${this.props.flat.imageUrl}')` }}>
+        <div className="card-category">{this.props.flat.price} {this.props.flat.priceCurrency}</div>
+        <div className="card-description">
+          <h2>{this.props.flat.name}</h2>
+        </div>
       </div>
     );
+  }
 }
-}
-
 
 export default Flat;
