@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Flat from './flat';
 import FlatList from './flat_list';
+import flats from "../data/flats";
 
 
 class App extends Component {
@@ -9,18 +10,17 @@ class App extends Component {
     super(props);
 
     this.state = {
-      flats: [],
+      flats: flats,
       selectedFlatId: null
     };
   }
 
   render() {
     return (
-      <div className="flat-list ">
-        <FlatList flats={this.state.flats} />
-      </div>
-      <div className="map-container">
-
+      <div>
+        <div className="flat-list ">
+          <FlatList flats={this.state.flats} />
+        </div>
       </div>
     );
   }

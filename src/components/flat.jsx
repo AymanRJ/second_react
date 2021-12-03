@@ -2,16 +2,29 @@ import React, { Component } from "react";
 
 
 class Flat extends Component {
+
+  renderFlat = () => {
+    // const url = this.props.flat.url
+    // const price = this.props.flat.price
+    // const name = this.props.flat.name
+
+    return (
+      <div className="card" style={{ backgroundColor: "black" }}>
+        <div className="card-category">le prix</div>
+        <div className="card-description">
+          <h2>le nom</h2>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
-      <div class="card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat3.jpg';);">
-        <div class="card-category">150 EUR</div>
-        <div class="card-description">
-          <h2>Super 60m2 in trendy neighborhood!</h2>
-        </div>
-        <a class="card-link" href="#"></a>
-      </div>)
-  }
+      <div>
+        {this.renderFlat()}
+      </div>
+    );
+}
 }
 
 
